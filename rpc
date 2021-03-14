@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+
+import platform
+
+if platform.system() != 'Darwin':
+    exit('Sorry, Apple Music Discord RPC works only under macOS :c')
+
+import osascript
+from pypresence import Presence
+import time
+import xml.etree.ElementTree as XML
+
+def main():
+    RPC = Presence('820367561975529483')
+    RPC.connect()
+
+    getSongInfo = '''
+        log "<song>"
+        tell application "Music"
+            set key_array to { "name", "artist", "album", "year", "duration", "position", "state" }
+            set song_array to { name of current track, artist of current track, album of current track, year of current track, duration of current track, player position, player state}
+            repeat with x from 1 to length of song_array
+                set i to item x of song_array
+                log "<" & item x of key_array & ">" & i & "</" & item x of key_array & ">"
+            end repeat
+        end tell
+        log "</song>"
+    '''
+
+    ret = False
+    while True:
+        code, _, out = osascript.run(getSongInfo)
+
+        if code == 0:
+            if ret == False:
+                print('Apple Music Discord RPC is ready!')
+
+            out = out.replace('&', '&#x26;')
+            song = XML.fromstring(out)
+            song_array = {}
+
+            i = 0
+            for j in ['name', 'artist', 'album', 'year', 'duration', 'position', 'state']:
+                song_array[f'{j}'] = song[i].text
+                i += 1
+
+            if song_array['state'] == 'playing':
+                state=['play', 'Playing']
+            elif song_array['state'] == 'paused':
+                state=['pause', 'Paused']
+
+            RPC.update(details=song_array['name'],
+                        state=f'{song_array["artist"]} - {song_array["album"]} ({song_array["year"]})',
+                        large_image='logo', large_text='Apple Music Discord RPC by sech1p',
+                        small_image=state[0], small_text=state[1],
+                        start=time.time(),
+                        end=time.time() + (int(float(song_array['duration'])) - int(float(song_array['position']))))
+        else:
+            None
+
+        ret = True
+        time.sleep(2)
+
+if __name__ == '__main__':
+    main()

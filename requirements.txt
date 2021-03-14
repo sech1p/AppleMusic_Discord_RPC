@@ -1,0 +1,2 @@
+osascript
+pypresence
