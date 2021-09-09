@@ -9,6 +9,7 @@ import osascript
 from pypresence import Presence
 import time
 import xml.etree.ElementTree as XML
+from locale import setlocale, LC_NUMERIC, atof
 
 def main():
     RPC = Presence('820367561975529483')
@@ -49,12 +50,19 @@ def main():
             elif song_array['state'] == 'paused':
                 state=['pause', 'Paused']
 
+            if ret == False:
+                try:
+                    float(song_array['duration'])
+                except ValueError:
+                    # Apple Music results uses comma as decimal separator
+                    setlocale(LC_NUMERIC, 'de_DE')
+
             RPC.update(details=song_array['name'],
                         state=f'{song_array["artist"]} - {song_array["album"]} ({song_array["year"]})',
                         large_image='logo', large_text='Apple Music Discord RPC by sech1p',
                         small_image=state[0], small_text=state[1],
                         start=time.time(),
-                        end=time.time() + (int(float(song_array['duration'])) - int(float(song_array['position']))))
+                        end=time.time() + (int(atof(song_array['duration'])) - int(atof(song_array['position']))))
         else:
             None
 
