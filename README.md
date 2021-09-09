@@ -6,8 +6,6 @@ This is a simple tool that displays in RPC Discord status the music you are curr
 * Show the music you're listening to without much delay
 * Lightweight (based on python3 and native macOS system tool)
 
-Unfortunately, at the moment, Apple Music Rich Presence only works when listening to music in `Library`, we will try to fix it soon
-
 ### 🎥 RPC in action
 ![](rpc_in_action.png)
 
