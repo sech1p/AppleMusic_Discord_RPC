@@ -21,6 +21,8 @@ Grab binary from [here](https://github.com/sech1p/AppleMusic_Discord_RPC/release
 
 The binary for macOS is named as `darwin`
 
+## 💖 [Acknowledgments](ACKNOWLEDGMENTS.md)
+
 ## 📝 License
 
 Apple Music Presence is licensed under the Opinionated Queer License v1.0. Check the [LICENSE.md](LICENSE.md) file for more information.
