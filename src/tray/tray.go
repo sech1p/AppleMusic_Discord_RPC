@@ -1,11 +1,12 @@
-//go:build darwin
+//go:build darwin || windows
 
 package tray
 
 import (
+	"os"
+
 	"github.com/getlantern/systray"
 	"github.com/skratchdot/open-golang/open"
-	"os"
 )
 
 var Status string
