@@ -22,11 +22,22 @@ jobs:
           COMMIT_MESSAGE: "📚 Update Changelog"
           TYPE: ""
 
-      - name: Build Release 🛠
+      - name: Build Release 🛠 (macOS)
         uses: wangyoucao577/go-release-action@v1.25
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: darwin
+          goarch: amd64
+          goversion: "https://dl.google.com/go/go1.18.linux-amd64.tar.gz"
+          project_path: "./src"
+        env:
+          CGO_ENABLED: 1
+      
+      - name: Build Release 🛠 (Windows)
+        uses: wangyoucao577/go-release-action@v1.25
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          goos: windows
           goarch: amd64
           goversion: "https://dl.google.com/go/go1.18.linux-amd64.tar.gz"
           project_path: "./src"
