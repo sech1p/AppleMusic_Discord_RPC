@@ -1,52 +1,13 @@
-# 🏳️‍🌈 Opinionated Queer License v1.0
+Copyright 2023 Eliza Emilia "sech1p" Semeniuk
 
-© Copyright sech1p
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-## Permissions
+    http://www.apache.org/licenses/LICENSE-2.0
 
-The creators of this Work (“The Licensor”) grant permission
-to any person, group or legal entity that doesn't violate the prohibitions below (“The User”),
-to do everything with this Work that would otherwise infringe their copyright or any patent claims,
-subject to the following conditions:
-
-## Obligations
-
-The User must give appropriate credit to the Licensor,
-provide a copy of this license or a (clickable, if the medium allows) link to [oql.avris.it](https://oql.avris.it),
-and indicate whether and what kind of changes were made.
-The User may do so in any reasonable manner,
-but not in any way that suggests the Licensor endorses the User or their use.
-
-## Prohibitions
-
-No one may use this Work for prejudiced or bigoted purposes, including but not limited to:
-racism, xenophobia, queerphobia, queer exclusionism, homophobia, transphobia, enbyphobia, misogyny.
-
-No one may use this Work to inflict or facilitate violence or abuse of human rights as defined in the
-[Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights).
-
-No law enforcement, carceral institutions, immigration enforcement entities, military entities or military contractors
-may use the Work for any reason. This also applies to any individuals employed by those entities.
-
-No business entity where the ratio of pay (salaried, freelance, stocks, or other benefits)
-between the highest and lowest individual in the entity is greater than 50 : 1
-may use the Work for any reason.
-
-No private business run for profit with more than a thousand employees
-may use the Work for any reason.
-
-Unless the User has made substantial changes in the Work,
-or uses it only as a part of a new work (eg. as a library, as a part of an anthology, etc.),
-they are prohibited from selling the Work.
-
-## Sanctions
-
-If the Licensor notifies the User that they have not complied with the rules of the license,
-they can keep their license by complying within 30 days after the notice.
-If they do not do so, their license ends immediately.
-
-## Warranty
-
-This Work is provided “as is”, without warranty of any kind, express or implied.
-The Licensor will not be liable to anyone for any damages related to the Work or this license,
-under any kind of legal claim as far as the law allows.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
