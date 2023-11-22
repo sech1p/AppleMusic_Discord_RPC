@@ -5,14 +5,14 @@ A simple tool that displays in Discord status the music you are currently listen
 ## ➕ Features
 
 * You can show the world the music you taste without delay
-* True minimalism (no unnecessary windows)
+* mInImAlIsTiC (if you give a f about this so)
 * Fits in a few megabytes
 
 > ![A screenshot of my Activity showing this Presence in action](./assets/screen.jpeg)
 
 ## 💾 Prerequisites
 
-* macOS Catalina or newer (with `Music` app)
+* macOS Catalina or newer (with `Music` app) / Windows 10 (with `iTunes` app)
 * Discord (*i guess*)
 
 ## ▶️ Getting Started
@@ -21,11 +21,13 @@ Grab binary from [here](https://github.com/sech1p/AppleMusic_Discord_RPC/release
 
 The binary for macOS is named as `darwin`
 
+The binary for Windows is named as `windows`
+
 ## 💖 [Acknowledgments](ACKNOWLEDGMENTS.md)
 
 ## 📝 License
 
-Apple Music Presence is licensed under the Opinionated Queer License v1.0. Check the [LICENSE.md](LICENSE.md) file for more information.
+Apple Music Presence is licensed under the Apache License 2.0. Check the [LICENSE.md](LICENSE.md) file for more information.
 
 ## ⚠️ Disclaimer
 
