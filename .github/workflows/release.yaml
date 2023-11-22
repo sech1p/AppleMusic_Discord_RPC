@@ -13,15 +13,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate Changelog 📝
-        uses: BobAnkh/auto-generate-changelog@master
-        with:
-          REPO_NAME: "sech1p/AppleMusic_Discord_RPC"
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PATH: "CHANGELOG.md"
-          COMMIT_MESSAGE: "📚 Update Changelog"
-          TYPE: ""
-
       - name: Build Release 🛠 (macOS)
         uses: wangyoucao577/go-release-action@v1.25
         with:
