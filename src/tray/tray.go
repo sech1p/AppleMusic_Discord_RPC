@@ -12,6 +12,7 @@ import (
 var Status string
 
 func onReady() {
+	systray.SetIcon(icon)
 	systray.SetTitle("🎧")
 	mInfo := systray.AddMenuItem("Apple Music Presence by sech1p ✨", "Visit project website")
 	systray.AddSeparator()
