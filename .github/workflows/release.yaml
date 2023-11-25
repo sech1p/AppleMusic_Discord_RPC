@@ -27,6 +27,7 @@ jobs:
         uses: wangyoucao577/go-release-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          pre_command: apt update && apt install -y clang
           goos: darwin
           goarch: amd64
           project_path: "./src"
