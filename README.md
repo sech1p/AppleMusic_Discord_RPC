@@ -12,8 +12,10 @@ A simple tool that displays in Discord status the music you are currently listen
 
 ## 💾 Prerequisites
 
-* macOS Catalina or newer (with `Music` app) / Windows 10 (with `iTunes` app)
+* macOS High Sierra* or newer (with `iTunes` or `Music` app in newest Macs) / Windows 10 (with `iTunes` app)
 * Discord (*i guess*)
+
+*Older versions has not been tested
 
 ## ▶️ Getting Started
 
