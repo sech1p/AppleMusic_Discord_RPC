@@ -4,14 +4,27 @@ package platform
 
 import (
 	"errors"
-	"github.com/andybrewer/mack"
+	"fmt"
+	"strconv"
 	"strings"
+
+	"github.com/andybrewer/mack"
+	"github.com/matishsiao/goInfo"
 )
 
 func GetSongData() (string, error) {
-	const cmd = `¬
+	osInfo, err := goInfo.GetInfo()
+	kernelVersion, _ := strconv.Atoi(strings.Split(osInfo.Core, ".")[0])
+	musicApplication := ""
+	if kernelVersion <= 18 {
+		musicApplication = "iTunes"
+	} else {
+		musicApplication = "Music"
+	}
+
+	cmd := fmt.Sprintf(`¬
 		log "<song>"
-		tell application "Music"
+		tell application "%s"
 			set key_array to {"name", ¬
 				"artist", ¬
 				"album", ¬
@@ -33,9 +46,9 @@ func GetSongData() (string, error) {
 				"</" & item x of key_array & ">"
 			end repeat
 		end tell
-		log "</song>"`
+		log "</song>"`, musicApplication)
 
-	out, err := mack.Tell("Music", cmd)
+	out, err := mack.Tell(musicApplication, cmd)
 	if err != nil {
 		switch {
 		case strings.Contains(err.Error(), "Can’t get name of current track."):
