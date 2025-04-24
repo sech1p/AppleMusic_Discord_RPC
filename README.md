@@ -18,7 +18,7 @@ This Presence is rarely updated, expect new releases every few months.
 * Minimalistic.
 * Fits in a few megabytes.
 
-> ![A screenshot of my Activity showing this Presence in action](./assets/screen.jpeg)
+> ![A screenshot of my Activity showing this Presence in action](./assets/screen.png)
 
 ## 💾 Prerequisites
 
