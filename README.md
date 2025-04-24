@@ -5,7 +5,7 @@ A simple tool that displays in Discord status the music you are currently listen
 ## ➕ Features
 
 * You can show the world the music you taste without delay
-* mInImAlIsTiC (if you give a f about this so)
+* Minimalistic
 * Fits in a few megabytes
 
 > ![A screenshot of my Activity showing this Presence in action](./assets/screen.jpeg)
