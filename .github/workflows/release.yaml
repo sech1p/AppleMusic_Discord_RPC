@@ -55,9 +55,9 @@ jobs:
           destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
 
       - name: Upload artifact 📦 (Intel-based Macs)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
+          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64
           path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
 
       - name: Build Release 🛠 (Apple Silicon-based Macs)
@@ -80,7 +80,7 @@ jobs:
           destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
 
       - name: Upload artifact 📦 (Apple Silicon-based Macs)
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
+          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64
           path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
