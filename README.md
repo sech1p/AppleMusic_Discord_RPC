@@ -31,11 +31,14 @@ This Presence is rarely updated, expect new releases every few months.
 
 Grab binary from [here](https://github.com/sech1p/AppleMusic_Discord_RPC/releases) and run it. That's all!
 
+Or on Macs with [Homebrew](https://brew.sh) package manager, you can install this Presence by:
+
+```sh
+$ brew tap sech1p/homebrew
+$ brew install applemusic_discord_rpc
+```
+
 Additionally - on newests macOS, click `Allow` if you got pop-up about permissions to controlling Apple Music by this script.
-
-The binary for macOS is named as `darwin`.
-
-The binary for Windows is named as `windows`.
 
 ## 💖 [Acknowledgments](ACKNOWLEDGMENTS.md)
 
