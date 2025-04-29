@@ -53,11 +53,12 @@ jobs:
           filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
           path: "./AppleMusic_Discord_RPC"
 
-      - name: Upload artifact 📦 (Intel-based Macs)
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact and release it 📦 (Intel-based Macs)
+        uses: softprops/action-gh-release@v1
         with:
-          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64
-          path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
+          files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Release 🛠 (Apple Silicon-based Macs)
         run: |
@@ -77,8 +78,9 @@ jobs:
           filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
           path: "./AppleMusic_Discord_RPC"
 
-      - name: Upload artifact 📦 (Apple Silicon-based Macs)
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact and release it 📦 (Apple Silicon-based Macs)
+        uses: softprops/action-gh-release@v1
         with:
-          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64
-          path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
+          files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
