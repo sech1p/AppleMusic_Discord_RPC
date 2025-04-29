@@ -47,13 +47,11 @@ jobs:
           GOARCH: amd64
 
       - name: Pack Release 📦 (Intel-based Macs)
-        uses: somaz94/compress-decompress@v1
+        uses: thedoctor0/zip-release@0.7.5
         with:
-          command: compress
-          source: ./AppleMusic_Discord_RPC
-          format: zip
-          dest: "./"
-          destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
+          type: "zip"
+          filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
+          path: "./AppleMusic_Discord_RPC"
 
       - name: Upload artifact 📦 (Intel-based Macs)
         uses: actions/upload-artifact@v4
@@ -73,13 +71,11 @@ jobs:
           GOARCH: arm64
 
       - name: Pack Release 📦 (Apple Silicon-based Macs)
-        uses: somaz94/compress-decompress@v1
+        uses: thedoctor0/zip-release@0.7.5
         with:
-          command: compress
-          source: ./AppleMusic_Discord_RPC
-          format: zip
-          dest: "./"
-          destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
+          type: "zip"
+          filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
+          path: "./AppleMusic_Discord_RPC"
 
       - name: Upload artifact 📦 (Apple Silicon-based Macs)
         uses: actions/upload-artifact@v4
