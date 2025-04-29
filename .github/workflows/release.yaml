@@ -38,6 +38,7 @@ jobs:
           
       - name: Build Release 🛠 (Intel-based Macs)
         run: |
+          go get github.com/matishsiao/goInfo
           go build src/main.go
           mv main AppleMusic_Discord_RPC
         env:
@@ -63,6 +64,7 @@ jobs:
       - name: Build Release 🛠 (Apple Silicon-based Macs)
         run: |
           rm AppleMusic_Discord_RPC
+          go get github.com/matishsiao/goInfo
           go build src/main.go
           mv main AppleMusic_Discord_RPC
         env:
