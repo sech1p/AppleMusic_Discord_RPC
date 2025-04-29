@@ -5,8 +5,8 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  changelog:
-    runs-on: macos-latest
+  windows_build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code ⚙️
         uses: actions/checkout@v2
@@ -23,22 +23,64 @@ jobs:
         env:
           CGO_ENABLED: 1
 
-      - name: Build Release 🛠 (Intel-based Macs)
-        uses: wangyoucao577/go-release-action@v1
+  macos_build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code ⚙️
+        uses: actions/checkout@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          goos: darwin
-          goarch: amd64
-          project_path: "./src"
+          fetch-depth: 0
+
+      - name: Setup Go 🧰
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.21"
+          
+      - name: Build Release 🛠 (Intel-based Macs)
+        run: |
+          go build src/main.go
+          mv main AppleMusic_Discord_RPC
         env:
           CGO_ENABLED: 1
+          GOOS: darwin
+          GOARCH: amd64
+
+      - name: Pack Release 📦 (Intel-based Macs)
+        uses: somaz94/compress-decompress@v1
+        with:
+          command: compress
+          source: ./AppleMusic_Discord_RPC
+          format: zip
+          dest: "./"
+          destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
+
+      - name: Upload artifact 📦 (Intel-based Macs)
+        uses: actions/upload-artifact@v3
+        with:
+          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
+          path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
 
       - name: Build Release 🛠 (Apple Silicon-based Macs)
-        uses: wangyoucao577/go-release-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          goos: darwin
-          goarch: arm64
-          project_path: "./src"
+        run: |
+          rm AppleMusic_Discord_RPC
+          go build src/main.go
+          mv main AppleMusic_Discord_RPC
         env:
           CGO_ENABLED: 1
+          GOOS: darwin
+          GOARCH: arm64
+
+      - name: Pack Release 📦 (Apple Silicon-based Macs)
+        uses: somaz94/compress-decompress@v1
+        with:
+          command: compress
+          source: ./AppleMusic_Discord_RPC
+          format: zip
+          dest: "./"
+          destfilename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
+
+      - name: Upload artifact 📦 (Apple Silicon-based Macs)
+        uses: actions/upload-artifact@v3
+        with:
+          name: AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
+          path: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
