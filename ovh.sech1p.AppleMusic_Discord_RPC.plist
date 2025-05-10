@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>ovh.sech1p.AppleMusic_Discord_RPC</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/applemusic_discord_rpc</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/AppleMusic_Discord_RPC.daemon.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/AppleMusic_Discord_RPC.daemon.err</string>
+  </dict>
+</plist>
