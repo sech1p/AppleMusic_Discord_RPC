@@ -3,9 +3,11 @@
 package tray
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/getlantern/systray"
+	"github.com/sech1p/AppleMusic_Discord_RPC/src/config"
 	"github.com/skratchdot/open-golang/open"
 )
 
@@ -14,7 +16,7 @@ var Status string
 func onReady() {
 	systray.SetIcon(icon)
 	systray.SetTitle("🎧")
-	mInfo := systray.AddMenuItem("Apple Music Presence by sech1p ✨", "Visit project website")
+	mInfo := systray.AddMenuItem(fmt.Sprintf("Apple Music Presence %s by sech1p ✨", config.Version), "Visit project website")
 	systray.AddSeparator()
 	mQuit := systray.AddMenuItem("Quit", "Close this amazing Presence 😿")
 
