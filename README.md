@@ -12,6 +12,8 @@ Version v1.2.1 (released in end of April 2025, almost 2 years after last Presenc
 
 This Presence is rarely updated, expect new releases every few months.
 
+Don't use app bundle from `Applications/` folder in repository, it's only part for building the real bundle! You can find it in [releases](https://github.com/sech1p/AppleMusic_Discord_RPC/releases) section!
+
 ## ➕ Features
 
 * You can show the world the music you taste without delay.
