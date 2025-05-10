@@ -6,7 +6,7 @@
     <string>ovh.sech1p.AppleMusic_Discord_RPC</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/applemusic_discord_rpc</string>
+      <string>/Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/AppleMusic_Discord_RPC</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
