@@ -41,22 +41,39 @@ jobs:
           go get github.com/matishsiao/goInfo
           go build src/main.go
           mv main AppleMusic_Discord_RPC
+          cp AppleMusic_Discord_RPC Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/
+          cp ovh.sech1p.AppleMusic_Discord_RPC.plist Applications/AppleMusic_Discord_RPC.app/
+          cp postinstall.sh Applications/AppleMusic_Discord_RPC.app/
         env:
           CGO_ENABLED: 1
           GOOS: darwin
           GOARCH: amd64
 
-      - name: Pack Release 📦 (Intel-based Macs)
+      - name: Pack Release 📦 (Intel-based Macs executable)
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: "zip"
           filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip"
           path: "./AppleMusic_Discord_RPC"
+      
+      - name: Pack Release 📦 (Intel-based Macs app bundle)
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: "zip"
+          filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.app.zip"
+          path: "./Applications/AppleMusic_Discord_RPC.app"
 
-      - name: Upload artifact and release it 📦 (Intel-based Macs)
+      - name: Upload artifact with executable and release it 📦 (Intel-based Macs)
         uses: softprops/action-gh-release@v1
         with:
           files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact with app bundle and release it 📦 (Intel-based Macs)
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-amd64.app.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -66,21 +83,38 @@ jobs:
           go get github.com/matishsiao/goInfo
           go build src/main.go
           mv main AppleMusic_Discord_RPC
+          cp AppleMusic_Discord_RPC Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/
+          cp ovh.sech1p.AppleMusic_Discord_RPC.plist Applications/AppleMusic_Discord_RPC.app/
+          cp postinstall.sh Applications/AppleMusic_Discord_RPC.app/
         env:
           CGO_ENABLED: 1
           GOOS: darwin
           GOARCH: arm64
 
-      - name: Pack Release 📦 (Apple Silicon-based Macs)
+      - name: Pack Release 📦 (Apple Silicon-based Macs executable)
         uses: thedoctor0/zip-release@0.7.5
         with:
           type: "zip"
           filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip"
           path: "./AppleMusic_Discord_RPC"
+      
+      - name: Pack Release 📦 (Apple Silicon-based Macs app bundle)
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: "zip"
+          filename: "AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.app.zip"
+          path: "./Applications/AppleMusic_Discord_RPC.app"
 
-      - name: Upload artifact and release it 📦 (Apple Silicon-based Macs)
+      - name: Upload artifact executable and release it 📦 (Apple Silicon-based Macs)
         uses: softprops/action-gh-release@v1
         with:
           files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact app bundle and release it 📦 (Apple Silicon-based Macs)
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./AppleMusic_Discord_RPC-${{ github.ref_name }}-mac-arm64.app.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
