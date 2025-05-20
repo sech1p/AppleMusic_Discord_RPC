@@ -44,6 +44,7 @@ jobs:
           cp AppleMusic_Discord_RPC Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/
           cp ovh.sech1p.AppleMusic_Discord_RPC.plist Applications/AppleMusic_Discord_RPC.app/
           cp postinstall.sh Applications/AppleMusic_Discord_RPC.app/
+          xattr -rd com.apple.quarantine Applications/AppleMusic_Discord_RPC.app
         env:
           CGO_ENABLED: 1
           GOOS: darwin
@@ -86,6 +87,7 @@ jobs:
           cp AppleMusic_Discord_RPC Applications/AppleMusic_Discord_RPC.app/Contents/MacOS/
           cp ovh.sech1p.AppleMusic_Discord_RPC.plist Applications/AppleMusic_Discord_RPC.app/
           cp postinstall.sh Applications/AppleMusic_Discord_RPC.app/
+          xattr -rd com.apple.quarantine Applications/AppleMusic_Discord_RPC.app
         env:
           CGO_ENABLED: 1
           GOOS: darwin
