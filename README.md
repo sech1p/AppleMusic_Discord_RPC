@@ -4,15 +4,7 @@
 
 ## ⚠️ Notice 
 
-This Discord Rich Presence was created back to 2022. Then, I learning Go programming language and this project is result of this learning. Few years later, my programming practices are much different than then. That's why commits style are mixed.
-
-Apple some time ago released Apple Music application for Windows, it not scripted by me yet. Apple Music for Windows support will be introduced in v1.3.0.
-
-Version v1.2.1 (released in end of April 2025, almost 2 years after last Presence update) introduces Presence executable for Apple Silicon.
-
-This Presence is rarely updated, expect new releases every few months.
-
-Don't use app bundle from `Applications/` folder in repository, it's only part for building the real bundle! You can find it in [releases](https://github.com/sech1p/AppleMusic_Discord_RPC/releases) section!
+Due to switching to [Cider](https://cider.sh) in end of May 2025, this repo is no longer maintained. Last available version is a v1.2.3. Thank you for all support!
 
 ## ➕ Features
 
