@@ -6,6 +6,11 @@
 
 Due to switching to [Cider](https://cider.sh) in end of May 2025, this repo is no longer maintained. Last available version is a v1.2.3. Thank you for all support!
 
+Possible solutions:
+
+- Use this Presence (not guaranteed to work; if you want extend this project, feel free to fork).
+- Switch to [Cider](https://cider.sh) (I'm using Cider 2, so I can truly recommend it for you).
+
 ## ➕ Features
 
 * You can show the world the music you taste without delay.
